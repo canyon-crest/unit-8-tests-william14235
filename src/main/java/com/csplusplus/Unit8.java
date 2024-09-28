@@ -34,7 +34,7 @@ public class Unit8 {
     // Instructions: Traverse the 2D array and find the maximum element.
     public static int findMax(int[][] array) {
         // TODO: Implement this method
-        int max = 0;
+        int max = Integer.MIN_VALUE;
         for(int[] arr:array){
             for(int elem: arr){
                 if(elem > max){
@@ -49,11 +49,12 @@ public class Unit8 {
     // Instructions: Reverse the rows of the 2D array (e.g., the first row becomes the last, etc.).
     public static void reverseRows(int[][] array) {
         // TODO: Implement this method
-        int[][] reversedArray = new int[array.length][array[0].length];
+        int[] temp;
         for(int i = 0;i<array.length/2;i++){
-            reversedArray[array.length-1-i] = array[i];
+            temp = array[i];
+            array[i] = array[array.length-1-i];
+            array[array.length-1-i] = temp;
         }
-        array = reversedArray;
     }
 
     // 5. Method to transpose a 2D array (swap rows and columns)
